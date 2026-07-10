@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rzemiosło dekarskie — Piotr Fira | Koszalin</title>
+<meta name="description" content="Krycie i naprawa dachów, obróbki blacharskie, wymiana więźby i przeglądy techniczne. Rzemiosło dekarskie w Koszalinie i okolicy od 1996 roku." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: {
+            deep: '#0F1830',
+            DEFAULT: '#1B2A5C',
+            light: '#2C3E7A',
+          },
+          red: {
+            signal: '#D81F26',
+            dark: '#A3151B',
+          },
+          cream: '#F4F1E8',
+          steel: '#2B3860',
+          slate: {
+            body: '#4B5268',
+          },
+        },
+        fontFamily: {
+          display: ['Oswald', 'sans-serif'],
+          body: ['Inter', 'sans-serif'],
+          mono: ['Space Mono', 'monospace'],
+        },
+      },
+    },
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; }
+  .font-display { font-family: 'Oswald', sans-serif; }
+  .tracking-tightest { letter-spacing: -0.03em; }
+
+  .grain {
+    position: relative;
+  }
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.06;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { scroll-behavior: auto !important; }
+  }
+
+  .btn-primary {
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+    box-shadow: 0 8px 20px -6px rgba(216, 31, 38, 0.55);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px -6px rgba(216, 31, 38, 0.65);
+  }
+  .btn-primary:active {
+    transform: translateY(0px);
+  }
+
+  .btn-outline {
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease, color 0.2s ease;
+  }
+  .btn-outline:hover {
+    transform: translateY(-2px);
+  }
+
+  .nav-link {
+    position: relative;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: #D81F26;
+    transition: width 0.25s ease;
+  }
+  .nav-link:hover::after, .nav-link:focus-visible::after {
+    width: 100%;
+  }
+
+  input:focus-visible, textarea:focus-visible, a:focus-visible, button:focus-visible {
+    outline: 2px solid #D81F26;
+    outline-offset: 3px;
+  }
+
+  .shadow-layered {
+    box-shadow:
+      0 2px 4px -1px rgba(15,24,48,0.10),
+      0 8px 16px -4px rgba(15,24,48,0.12),
+      0 24px 40px -12px rgba(15,24,48,0.18);
+  }
+
+  .mobile-menu {
+    transition: max-height 0.3s ease, opacity 0.25s ease;
+  }
+
+  .back-link svg {
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .back-link:hover svg {
+    transform: translateX(-3px);
+  }
+</style>
+</head>
+<body class="bg-cream text-navy-deep antialiased">
+
+<!-- ============ HEADER ============ -->
+<header class="sticky top-0 z-50 bg-navy-deep/95 backdrop-blur border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="flex items-center justify-between h-20">
+      <a href="index.html#top" class="flex items-center gap-3 group">
+        <img src="brand_assets/logo-original.jpg" alt="Piotr Fira - Dekarze i Budowlańcy" class="h-14 w-14 rounded-full object-cover ring-2 ring-red-signal/70 group-hover:ring-red-signal transition" />
+        <div class="leading-tight">
+          <div class="font-display font-bold text-lg md:text-xl text-white tracking-tight uppercase">Piotr Fira</div>
+          <div class="text-[11px] md:text-xs text-white/60 tracking-widest uppercase font-mono">Dekarze i Budowlańcy</div>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-9 font-display uppercase text-sm tracking-wide text-white/85">
+        <a href="index.html#uslugi" class="nav-link hover:text-white">Usługi</a>
+        <a href="index.html#onas" class="nav-link hover:text-white">O nas</a>
+        <a href="index.html#opinie" class="nav-link hover:text-white">Opinie</a>
+        <a href="index.html#kontakt" class="nav-link hover:text-white">Kontakt</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="tel:607361251" class="hidden sm:inline-flex btn-primary items-center gap-2 bg-red-signal hover:bg-red-dark text-white font-display uppercase text-sm tracking-wide font-semibold px-5 py-2.5 rounded-sm">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372a1.5 1.5 0 00-1.019-1.422l-3.55-1.183a1.5 1.5 0 00-1.628.408l-.483.483a.75.75 0 01-.918.13 12.06 12.06 0 01-5.19-5.19.75.75 0 01.13-.918l.483-.483a1.5 1.5 0 00.408-1.628L8.044 4.769A1.5 1.5 0 006.622 3.75H5.25A2.25 2.25 0 003 6v.75z" /></svg>
+          607 361 251
+        </a>
+        <button id="menu-btn" class="lg:hidden text-white p-2" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu lg:hidden overflow-hidden max-h-0 opacity-0">
+      <nav class="flex flex-col gap-1 pb-5 font-display uppercase text-sm tracking-wide text-white/85">
+        <a href="index.html#uslugi" class="py-2 border-b border-white/10">Usługi</a>
+        <a href="index.html#onas" class="py-2 border-b border-white/10">O nas</a>
+        <a href="index.html#opinie" class="py-2 border-b border-white/10">Opinie</a>
+        <a href="index.html#kontakt" class="py-2 border-b border-white/10">Kontakt</a>
+        <a href="tel:607361251" class="mt-3 inline-flex justify-center bg-red-signal text-white font-semibold px-5 py-3 rounded-sm">607 361 251</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="relative grain bg-navy-deep overflow-hidden">
+  <div class="absolute inset-0" style="background-image: radial-gradient(ellipse 900px 700px at 82% 15%, rgba(216,31,38,0.16), transparent 60%), radial-gradient(ellipse 800px 900px at 100% 100%, rgba(44,62,122,0.55), transparent 65%);"></div>
+  <div class="absolute inset-0 opacity-[0.07]" style="background-image: repeating-linear-gradient(115deg, #fff 0 2px, transparent 2px 60px);"></div>
+
+  <div class="relative max-w-7xl mx-auto px-5 md:px-8 pt-14 pb-20 md:pt-20 md:pb-24">
+    <a href="index.html#uslugi" class="back-link inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-white/50 hover:text-red-signal transition-colors mb-8">
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
+      Wszystkie usługi
+    </a>
+
+    <div class="font-mono text-xs uppercase tracking-widest text-red-signal mb-3">Usługa 01 / 05</div>
+    <h1 class="font-display font-bold uppercase text-white text-4xl sm:text-5xl md:text-6xl leading-[1.05] tracking-tightest max-w-3xl">
+      Rzemiosło dekarskie
+    </h1>
+
+    <p class="mt-6 text-white/75 text-lg leading-[1.7] max-w-xl">
+      Trzy dekady doświadczenia w pokryciach dachowych — od tradycyjnej dachówki po nowoczesne systemy
+      blacharskie. Każdy dach kryjemy tak, jakby miał stać nad naszym własnym domem.
+    </p>
+
+    <div class="mt-9 flex flex-col sm:flex-row gap-4">
+      <a href="tel:607361251" class="btn-primary inline-flex items-center justify-center gap-2 bg-red-signal hover:bg-red-dark text-white font-display uppercase font-semibold tracking-wide px-7 py-4 rounded-sm">
+        Zadzwoń: 607 361 251
+      </a>
+      <a href="index.html#kontakt" class="btn-outline inline-flex items-center justify-center gap-2 border border-white/30 hover:bg-white hover:text-navy-deep text-white font-display uppercase font-semibold tracking-wide px-7 py-4 rounded-sm">
+        Bezpłatna wycena
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ZAKRES PRAC ============ -->
+<section class="bg-cream py-24">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-14 items-start">
+    <div>
+      <div class="font-mono text-xs uppercase tracking-widest text-red-signal mb-3">Zakres prac</div>
+      <h2 class="font-display font-bold uppercase text-navy-deep text-3xl md:text-4xl tracking-tightest leading-tight mb-6">
+        Co wchodzi<br />w rzemiosło dekarskie
+      </h2>
+      <p class="text-slate-body leading-[1.7] max-w-lg">
+        Zajmujemy się dachami kompleksowo — od pierwszego oglądu więźby po ostatnią obróbkę blacharską.
+        Pracujemy własną ekipą, bez podzlecania robót obcym wykonawcom.
+      </p>
+    </div>
+
+    <ul class="space-y-4">
+      <li class="flex items-start gap-3">
+        <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-red-signal/15 flex items-center justify-center">
+          <svg class="w-3 h-3 text-red-signal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+        </span>
+        <span class="text-navy-deep font-medium">Krycie dachów dachówką ceramiczną i betonową</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-red-signal/15 flex items-center justify-center">
+          <svg class="w-3 h-3 text-red-signal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+        </span>
+        <span class="text-navy-deep font-medium">Montaż blachodachówki i blachy na rąbek stojący</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-red-signal/15 flex items-center justify-center">
+          <svg class="w-3 h-3 text-red-signal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+        </span>
+        <span class="text-navy-deep font-medium">Pokrycia papowe i bitumiczne na dachach płaskich</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-red-signal/15 flex items-center justify-center">
+          <svg class="w-3 h-3 text-red-signal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+        </span>
+        <span class="text-navy-deep font-medium">Obróbki blacharskie: kominy, okna połaciowe, kosze</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-red-signal/15 flex items-center justify-center">
+          <svg class="w-3 h-3 text-red-signal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+        </span>
+        <span class="text-navy-deep font-medium">Montaż i naprawa rynien oraz systemów odwodnienia</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-red-signal/15 flex items-center justify-center">
+          <svg class="w-3 h-3 text-red-signal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+        </span>
+        <span class="text-navy-deep font-medium">Wymiana i naprawa więźby dachowej</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-red-signal/15 flex items-center justify-center">
+          <svg class="w-3 h-3 text-red-signal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+        </span>
+        <span class="text-navy-deep font-medium">Ocieplenie połaci dachowych</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-red-signal/15 flex items-center justify-center">
+          <svg class="w-3 h-3 text-red-signal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+        </span>
+        <span class="text-navy-deep font-medium">Przeglądy techniczne i konserwacja przed zimą</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ PRZEBIEG WSPÓŁPRACY ============ -->
+<section class="bg-navy-deep grain py-24">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mb-16">
+      <div class="font-mono text-xs uppercase tracking-widest text-red-signal mb-3">Jak pracujemy</div>
+      <h2 class="font-display font-bold uppercase text-white text-3xl md:text-4xl tracking-tightest leading-tight">
+        Przebieg współpracy
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-10 relative">
+      <div class="hidden md:block absolute top-6 left-0 right-0 h-px bg-white/15"></div>
+
+      <div class="relative">
+        <div class="w-12 h-12 rounded-full bg-red-signal flex items-center justify-center font-mono font-bold text-white mb-5 relative z-10">01</div>
+        <h3 class="font-display font-semibold uppercase text-white text-lg mb-2 tracking-tight">Oględziny i wycena</h3>
+        <p class="text-white/60 leading-[1.7]">Bezpłatny przyjazd na miejsce i ocena stanu dachu.</p>
+      </div>
+      <div class="relative">
+        <div class="w-12 h-12 rounded-full bg-red-signal flex items-center justify-center font-mono font-bold text-white mb-5 relative z-10">02</div>
+        <h3 class="font-display font-semibold uppercase text-white text-lg mb-2 tracking-tight">Dobór materiałów</h3>
+        <p class="text-white/60 leading-[1.7]">Wspólnie wybieramy pokrycie dopasowane do budynku i budżetu.</p>
+      </div>
+      <div class="relative">
+        <div class="w-12 h-12 rounded-full bg-red-signal flex items-center justify-center font-mono font-bold text-white mb-5 relative z-10">03</div>
+        <h3 class="font-display font-semibold uppercase text-white text-lg mb-2 tracking-tight">Demontaż i montaż</h3>
+        <p class="text-white/60 leading-[1.7]">Zdejmujemy stare pokrycie (jeśli remont) i kryjemy dach od nowa.</p>
+      </div>
+      <div class="relative">
+        <div class="w-12 h-12 rounded-full bg-red-signal flex items-center justify-center font-mono font-bold text-white mb-5 relative z-10">04</div>
+        <h3 class="font-display font-semibold uppercase text-white text-lg mb-2 tracking-tight">Odbiór końcowy</h3>
+        <p class="text-white/60 leading-[1.7]">Sprzątamy plac, przekazujemy gwarancję i omawiamy konserwację.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="bg-cream py-20">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="bg-navy-deep grain rounded-sm p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+      <div class="absolute inset-0" style="background-image: radial-gradient(ellipse 700px 500px at 90% 0%, rgba(216,31,38,0.18), transparent 60%);"></div>
+      <div class="relative">
+        <h2 class="font-display font-bold uppercase text-white text-2xl md:text-3xl tracking-tightest leading-tight mb-2">
+          Masz dach do pokrycia lub naprawy?
+        </h2>
+        <p class="text-white/65 leading-[1.7]">Bezpłatna wycena na miejscu, bez zobowiązań.</p>
+      </div>
+      <div class="relative flex flex-col sm:flex-row gap-4 flex-shrink-0">
+        <a href="tel:607361251" class="btn-primary inline-flex items-center justify-center gap-2 bg-red-signal hover:bg-red-dark text-white font-display uppercase font-semibold tracking-wide px-7 py-4 rounded-sm">
+          Zadzwoń: 607 361 251
+        </a>
+        <a href="index.html#kontakt" class="btn-outline inline-flex items-center justify-center gap-2 border border-white/30 hover:bg-white hover:text-navy-deep text-white font-display uppercase font-semibold tracking-wide px-7 py-4 rounded-sm">
+          Formularz kontaktowy
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-navy-deep border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-14 grid md:grid-cols-3 gap-10">
+    <div class="flex items-center gap-3">
+      <img src="brand_assets/logo-original.jpg" alt="Piotr Fira" class="h-14 w-14 rounded-full object-cover ring-2 ring-red-signal/50" />
+      <div>
+        <div class="font-display font-bold text-white uppercase tracking-wide">Piotr Fira</div>
+        <div class="text-white/50 text-xs uppercase tracking-widest font-mono">Dekarze i Budowlańcy</div>
+      </div>
+    </div>
+
+    <div class="text-white/70 text-sm leading-loose">
+      <div class="font-display uppercase text-white text-xs tracking-widest mb-3">Kontakt</div>
+      <p>Koszalin i okolice</p>
+      <a href="tel:607361251" class="block hover:text-red-signal transition">tel. 607 361 251</a>
+    </div>
+
+    <div class="text-white/70 text-sm leading-loose">
+      <div class="font-display uppercase text-white text-xs tracking-widest mb-3">Firma</div>
+      <p>Na rynku od 1996 roku</p>
+      <p>Dekarstwo &middot; Budowa domów &middot; Remonty</p>
+    </div>
+  </div>
+  <div class="border-t border-white/10 py-6">
+    <p class="text-center text-white/40 text-xs">&copy; 2026 Piotr Fira — Dekarze i Budowlańcy. Wszelkie prawa zastrzeżone.</p>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuBtn.addEventListener('click', () => {
+    const isOpen = mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== '0px';
+    if (isOpen) {
+      mobileMenu.style.maxHeight = '0px';
+      mobileMenu.style.opacity = '0';
+      menuBtn.setAttribute('aria-expanded', 'false');
+    } else {
+      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+      mobileMenu.style.opacity = '1';
+      menuBtn.setAttribute('aria-expanded', 'true');
+    }
+  });
+</script>
+</body>
+</html>

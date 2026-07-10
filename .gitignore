@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Screenshot review artifacts (regenerated via `node screenshot.mjs`)
+temporary screenshots/
+
+# Claude Code local settings (machine-specific permissions)
+.claude/settings.local.json
+
+# Design reference images (not used on the site)
+inspiration.jpg
+inspiration2.jpg
+
+# OS cruft
+.DS_Store
+Thumbs.db

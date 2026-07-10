@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Piotr Fira — Dekarze i Budowlańcy | Koszalin</title>
+<meta name="description" content="Dekarstwo, budowa domów i remonty w Koszalinie i okolicy. Firma rodzinna, na rynku od 1996 roku. Bezpłatna wycena — tel. 607 361 251." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: {
+            deep: '#0F1830',
+            DEFAULT: '#1B2A5C',
+            light: '#2C3E7A',
+          },
+          red: {
+            signal: '#D81F26',
+            dark: '#A3151B',
+          },
+          cream: '#F4F1E8',
+          steel: '#2B3860',
+          slate: {
+            body: '#4B5268',
+          },
+        },
+        fontFamily: {
+          display: ['Oswald', 'sans-serif'],
+          body: ['Inter', 'sans-serif'],
+          mono: ['Space Mono', 'monospace'],
+        },
+      },
+    },
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; }
+  .font-display { font-family: 'Oswald', sans-serif; }
+  .tracking-tightest { letter-spacing: -0.03em; }
+
+  .grain {
+    position: relative;
+  }
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.06;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .stamp {
+    animation: stamp-spin 40s linear infinite;
+  }
+  @keyframes stamp-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .stamp { animation: none; }
+    * { scroll-behavior: auto !important; }
+  }
+
+  .btn-primary {
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+    box-shadow: 0 8px 20px -6px rgba(216, 31, 38, 0.55);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px -6px rgba(216, 31, 38, 0.65);
+  }
+  .btn-primary:active {
+    transform: translateY(0px);
+  }
+
+  .btn-outline {
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease, color 0.2s ease;
+  }
+  .btn-outline:hover {
+    transform: translateY(-2px);
+  }
+
+  .card-lift {
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .card-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px -18px rgba(15, 24, 48, 0.35);
+    border-color: #D81F26;
+  }
+
+  .nav-link {
+    position: relative;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: #D81F26;
+    transition: width 0.25s ease;
+  }
+  .nav-link:hover::after, .nav-link:focus-visible::after {
+    width: 100%;
+  }
+
+  input:focus-visible, textarea:focus-visible, a:focus-visible, button:focus-visible {
+    outline: 2px solid #D81F26;
+    outline-offset: 3px;
+  }
+
+  .shadow-layered {
+    box-shadow:
+      0 2px 4px -1px rgba(15,24,48,0.10),
+      0 8px 16px -4px rgba(15,24,48,0.12),
+      0 24px 40px -12px rgba(15,24,48,0.18);
+  }
+
+  .mobile-menu {
+    transition: max-height 0.3s ease, opacity 0.25s ease;
+  }
+
+  .service-row-bar {
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .service-row:hover .service-row-bar,
+  .service-row:focus-visible .service-row-bar {
+    transform: scaleY(1);
+  }
+  .service-row-arrow {
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .service-row:hover .service-row-arrow,
+  .service-row:focus-visible .service-row-arrow {
+    transform: translateX(4px);
+  }
+
+  #lightbox.is-open {
+    display: flex;
+  }
+</style>
+</head>
+<body class="bg-cream text-navy-deep antialiased">
+
+<!-- ============ HEADER ============ -->
+<header class="sticky top-0 z-50 bg-navy-deep/95 backdrop-blur border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="flex items-center justify-between h-20">
+      <a href="#top" class="flex items-center gap-3 group">
+        <img src="brand_assets/logo-original.jpg" alt="Piotr Fira - Dekarze i Budowlańcy" class="h-14 w-14 rounded-full object-cover ring-2 ring-red-signal/70 group-hover:ring-red-signal transition" />
+        <div class="leading-tight">
+          <div class="font-display font-bold text-lg md:text-xl text-white tracking-tight uppercase">Piotr Fira</div>
+          <div class="text-[11px] md:text-xs text-white/60 tracking-widest uppercase font-mono">Dekarze i Budowlańcy</div>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-9 font-display uppercase text-sm tracking-wide text-white/85">
+        <a href="#uslugi" class="nav-link hover:text-white">Usługi</a>
+        <a href="#onas" class="nav-link hover:text-white">O nas</a>
+        <a href="#realizacje" class="nav-link hover:text-white">Realizacje</a>
+        <a href="#opinie" class="nav-link hover:text-white">Opinie</a>
+        <a href="#kontakt" class="nav-link hover:text-white">Kontakt</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="tel:607361251" class="hidden sm:inline-flex btn-primary items-center gap-2 bg-red-signal hover:bg-red-dark text-white font-display uppercase text-sm tracking-wide font-semibold px-5 py-2.5 rounded-sm">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372a1.5 1.5 0 00-1.019-1.422l-3.55-1.183a1.5 1.5 0 00-1.628.408l-.483.483a.75.75 0 01-.918.13 12.06 12.06 0 01-5.19-5.19.75.75 0 01.13-.918l.483-.483a1.5 1.5 0 00.408-1.628L8.044 4.769A1.5 1.5 0 006.622 3.75H5.25A2.25 2.25 0 003 6v.75z" /></svg>
+          607 361 251
+        </a>
+        <button id="menu-btn" class="lg:hidden text-white p-2" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu lg:hidden overflow-hidden max-h-0 opacity-0">
+      <nav class="flex flex-col gap-1 pb-5 font-display uppercase text-sm tracking-wide text-white/85">
+        <a href="#uslugi" class="py-2 border-b border-white/10">Usługi</a>
+        <a href="#onas" class="py-2 border-b border-white/10">O nas</a>
+        <a href="#realizacje" class="py-2 border-b border-white/10">Realizacje</a>
+        <a href="#opinie" class="py-2 border-b border-white/10">Opinie</a>
+        <a href="#kontakt" class="py-2 border-b border-white/10">Kontakt</a>
+        <a href="tel:607361251" class="mt-3 inline-flex justify-center bg-red-signal text-white font-semibold px-5 py-3 rounded-sm">607 361 251</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="top" class="relative grain bg-navy-deep overflow-hidden">
+  <div class="absolute inset-0" style="background-image: radial-gradient(ellipse 900px 700px at 82% 15%, rgba(216,31,38,0.16), transparent 60%), radial-gradient(ellipse 800px 900px at 100% 100%, rgba(44,62,122,0.55), transparent 65%);"></div>
+  <div class="absolute inset-0 opacity-[0.07]" style="background-image: repeating-linear-gradient(115deg, #fff 0 2px, transparent 2px 60px);"></div>
+
+  <div class="relative max-w-7xl mx-auto px-5 md:px-8 pt-16 pb-24 md:pt-24 md:pb-32">
+    <div class="max-w-2xl">
+      <h1 class="font-display font-bold uppercase text-white text-4xl sm:text-5xl md:text-6xl leading-[1.05] tracking-tightest mt-2">
+        Dachy i domy<br />budowane <span class="text-red-signal">solidnie</span>
+      </h1>
+
+      <p class="mt-6 text-white/75 text-lg leading-[1.7] max-w-xl">
+        Krycie dachów, budowa domów jednorodzinnych i remonty. Jedna ekipa, trzy dekady doświadczenia
+        i rzetelna robota na terenie Koszalina i okolic.
+      </p>
+
+      <div class="mt-9 flex flex-col sm:flex-row gap-4">
+        <a href="tel:607361251" class="btn-primary inline-flex items-center justify-center gap-2 bg-red-signal hover:bg-red-dark text-white font-display uppercase font-semibold tracking-wide px-7 py-4 rounded-sm">
+          Zadzwoń: 607 361 251
+        </a>
+        <a href="#kontakt" class="btn-outline inline-flex items-center justify-center gap-2 border border-white/30 hover:bg-white hover:text-navy-deep text-white font-display uppercase font-semibold tracking-wide px-7 py-4 rounded-sm">
+          Bezpłatna wycena
+        </a>
+      </div>
+
+      <div class="mt-14 grid grid-cols-3 gap-6 max-w-lg border-t border-white/15 pt-8">
+        <div>
+          <div class="font-display font-bold text-3xl text-white">29<span class="text-red-signal">+</span></div>
+          <div class="text-white/55 text-xs uppercase tracking-wide mt-1">lat na rynku</div>
+        </div>
+        <div>
+          <div class="font-display font-bold text-3xl text-white">1996</div>
+          <div class="text-white/55 text-xs uppercase tracking-wide mt-1">rok założenia</div>
+        </div>
+        <div>
+          <div class="font-display font-bold text-3xl text-white">100<span class="text-red-signal">%</span></div>
+          <div class="text-white/55 text-xs uppercase tracking-wide mt-1">własna ekipa</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- signature stamp badge -->
+  <div class="hidden md:flex absolute right-10 bottom-10 items-center justify-center w-32 h-32 lg:w-36 lg:h-36">
+    <svg viewBox="0 0 200 200" class="stamp absolute inset-0 w-full h-full text-white/25">
+      <defs>
+        <path id="stampCircle" d="M 100,100 m -80,0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" />
+      </defs>
+      <text font-family="Space Mono, monospace" font-size="13" letter-spacing="3" fill="currentColor">
+        <textPath href="#stampCircle" startOffset="0%">GWARANCJA JAKOŚCI &middot; RZETELNA ROBOTA &middot; </textPath>
+      </text>
+    </svg>
+    <div class="w-20 h-20 lg:w-24 lg:h-24 rounded-full border-2 border-red-signal/80 flex items-center justify-center text-center">
+      <span class="font-display font-bold text-white text-sm leading-tight">OD<br />1996</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ USŁUGI ============ -->
+<section id="uslugi" class="bg-navy-deep grain pb-24 pt-4 md:pt-6 relative">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mb-4">
+      <div class="font-mono text-xs uppercase tracking-widest text-red-signal mb-3">Czym się zajmujemy</div>
+      <h2 class="font-display font-bold uppercase text-white text-3xl md:text-4xl tracking-tightest leading-tight">
+        Pięć filarów naszej roboty
+      </h2>
+    </div>
+
+    <div class="border-t border-white/10">
+      <!-- item 01 -->
+      <a href="rzemioslo-dekarskie.html" class="service-row group relative flex flex-col md:flex-row md:items-center gap-2 md:gap-10 py-7 md:py-8 border-b border-white/10 pl-6 md:pl-8">
+        <span class="service-row-bar absolute left-0 top-0 bottom-0 w-[3px] bg-red-signal"></span>
+        <span class="font-mono text-white/35 text-sm w-10 flex-shrink-0">01</span>
+        <h3 class="font-display font-bold uppercase text-2xl md:text-3xl text-white tracking-tight md:w-80 flex-shrink-0 group-hover:text-red-signal transition-colors">Rzemiosło dekarskie</h3>
+        <p class="text-white/55 leading-[1.7] max-w-lg">Krycie i naprawa dachów, wymiana pokryć, obróbki blacharskie oraz przeglądy i konserwacja przed zimą.</p>
+        <span class="hidden md:inline-flex items-center gap-2 font-display uppercase text-xs tracking-widest text-white/40 group-hover:text-white transition-colors ml-auto flex-shrink-0">
+          Zobacz więcej
+          <svg class="w-4 h-4 service-row-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        </span>
+      </a>
+
+      <!-- item 02 -->
+      <a href="budynki-szkieletowe.html" class="service-row group relative flex flex-col md:flex-row md:items-center gap-2 md:gap-10 py-7 md:py-8 border-b border-white/10 pl-6 md:pl-8">
+        <span class="service-row-bar absolute left-0 top-0 bottom-0 w-[3px] bg-red-signal"></span>
+        <span class="font-mono text-white/35 text-sm w-10 flex-shrink-0">02</span>
+        <h3 class="font-display font-bold uppercase text-2xl md:text-3xl text-white tracking-tight md:w-80 flex-shrink-0 group-hover:text-red-signal transition-colors">Budynki szkieletowe</h3>
+        <p class="text-white/55 leading-[1.7] max-w-lg">Szybsza i tańsza budowa domów oraz budynków gospodarczych w konstrukcji szkieletowej, bez kompromisów w jakości.</p>
+        <span class="hidden md:inline-flex items-center gap-2 font-display uppercase text-xs tracking-widest text-white/40 group-hover:text-white transition-colors ml-auto flex-shrink-0">
+          Zobacz więcej
+          <svg class="w-4 h-4 service-row-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        </span>
+      </a>
+
+      <!-- item 03 -->
+      <a href="remonty-i-elewacje.html" class="service-row group relative flex flex-col md:flex-row md:items-center gap-2 md:gap-10 py-7 md:py-8 border-b border-white/10 pl-6 md:pl-8">
+        <span class="service-row-bar absolute left-0 top-0 bottom-0 w-[3px] bg-red-signal"></span>
+        <span class="font-mono text-white/35 text-sm w-10 flex-shrink-0">03</span>
+        <h3 class="font-display font-bold uppercase text-2xl md:text-3xl text-white tracking-tight md:w-80 flex-shrink-0 group-hover:text-red-signal transition-colors">Remonty i elewacje</h3>
+        <p class="text-white/55 leading-[1.7] max-w-lg">Docieplenia, naprawy awaryjne i odświeżenie elewacji — remontujemy to, co inni już zbudowali.</p>
+        <span class="hidden md:inline-flex items-center gap-2 font-display uppercase text-xs tracking-widest text-white/40 group-hover:text-white transition-colors ml-auto flex-shrink-0">
+          Zobacz więcej
+          <svg class="w-4 h-4 service-row-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        </span>
+      </a>
+
+      <!-- item 04 -->
+      <a href="obiekty-zabytkowe.html" class="service-row group relative flex flex-col md:flex-row md:items-center gap-2 md:gap-10 py-7 md:py-8 border-b border-white/10 pl-6 md:pl-8">
+        <span class="service-row-bar absolute left-0 top-0 bottom-0 w-[3px] bg-red-signal"></span>
+        <span class="font-mono text-white/35 text-sm w-10 flex-shrink-0">04</span>
+        <h3 class="font-display font-bold uppercase text-2xl md:text-3xl text-white tracking-tight md:w-80 flex-shrink-0 group-hover:text-red-signal transition-colors">Obiekty zabytkowe</h3>
+        <p class="text-white/55 leading-[1.7] max-w-lg">Renowacje dachów i elewacji zabytkowych, zgodne z wytycznymi konserwatora i tradycyjnymi technikami.</p>
+        <span class="hidden md:inline-flex items-center gap-2 font-display uppercase text-xs tracking-widest text-white/40 group-hover:text-white transition-colors ml-auto flex-shrink-0">
+          Zobacz więcej
+          <svg class="w-4 h-4 service-row-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        </span>
+      </a>
+
+      <!-- item 05 -->
+      <a href="domy-pod-klucz.html" class="service-row group relative flex flex-col md:flex-row md:items-center gap-2 md:gap-10 py-7 md:py-8 border-b border-white/10 pl-6 md:pl-8">
+        <span class="service-row-bar absolute left-0 top-0 bottom-0 w-[3px] bg-red-signal"></span>
+        <span class="font-mono text-white/35 text-sm w-10 flex-shrink-0">05</span>
+        <h3 class="font-display font-bold uppercase text-2xl md:text-3xl text-white tracking-tight md:w-80 flex-shrink-0 group-hover:text-red-signal transition-colors">Domy pod klucz</h3>
+        <p class="text-white/55 leading-[1.7] max-w-lg">Budowa domów jednorodzinnych od fundamentów po wykończenie — jedna ekipa, jedna umowa, żadnych niejasności.</p>
+        <span class="hidden md:inline-flex items-center gap-2 font-display uppercase text-xs tracking-widest text-white/40 group-hover:text-white transition-colors ml-auto flex-shrink-0">
+          Zobacz więcej
+          <svg class="w-4 h-4 service-row-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ O NAS / SPLIT FEATURE ============ -->
+<section id="onas" class="bg-cream py-24">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-14 items-center">
+    <div class="relative order-2 lg:order-1">
+      <div class="absolute -inset-4 border border-navy/15 rounded-sm -z-10 hidden lg:block"></div>
+      <div class="relative rounded-sm overflow-hidden shadow-layered">
+        <img src="brand_assets/2.webp" alt="Budowa realizowana przez ekipę Piotra Firy — konstrukcja dachu w trakcie budowy" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/60 mix-blend-multiply"></div>
+      </div>
+      <div class="hidden sm:flex absolute -bottom-6 -right-6 bg-navy-deep text-white rounded-sm px-6 py-5 shadow-layered items-center gap-4">
+        <span class="font-display font-bold text-3xl text-red-signal">29+</span>
+        <span class="text-xs uppercase tracking-wide text-white/70 leading-tight max-w-[6.5rem]">lat rzetelnej roboty w Koszalinie</span>
+      </div>
+    </div>
+
+    <div class="order-1 lg:order-2">
+      <div class="font-mono text-xs uppercase tracking-widest text-red-signal mb-3">O firmie</div>
+      <h2 class="font-display font-bold uppercase text-navy-deep text-3xl md:text-4xl tracking-tightest leading-tight mb-6">
+        Rzetelna robota,<br />uczciwa cena
+      </h2>
+      <p class="text-slate-body leading-[1.7] mb-9 max-w-lg">
+        Firma budowlana Piotra Firy działa w Koszalinie i okolicy od 1996 roku. Zajmujemy się dachami,
+        budową domów i remontami.
+      </p>
+
+      <ul class="space-y-4 mb-10">
+        <li class="flex items-start gap-3">
+          <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-red-signal/15 flex items-center justify-center">
+            <svg class="w-3 h-3 text-red-signal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+          </span>
+          <span class="text-navy-deep font-medium">Bezpłatna wycena na miejscu, bez zobowiązań</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-red-signal/15 flex items-center justify-center">
+            <svg class="w-3 h-3 text-red-signal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+          </span>
+          <span class="text-navy-deep font-medium">Własna, sprawdzona ekipa — żadnych podwykonawców</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-red-signal/15 flex items-center justify-center">
+            <svg class="w-3 h-3 text-red-signal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+          </span>
+          <span class="text-navy-deep font-medium">Gwarancja na każdą wykonaną usługę</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-red-signal/15 flex items-center justify-center">
+            <svg class="w-3 h-3 text-red-signal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+          </span>
+          <span class="text-navy-deep font-medium">Dojazd na terenie Koszalina i okolicznych miejscowości</span>
+        </li>
+      </ul>
+
+      <a href="tel:607361251" class="btn-outline inline-flex items-center gap-2 border border-navy-deep hover:bg-navy-deep hover:text-white text-navy-deep font-display uppercase font-semibold tracking-wide px-7 py-4 rounded-sm">
+        Umów bezpłatną wycenę
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERIA REALIZACJI ============ -->
+<section id="realizacje" class="bg-cream pb-24">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mb-14">
+      <div class="font-mono text-xs uppercase tracking-widest text-red-signal mb-3">Portfolio</div>
+      <h2 class="font-display font-bold uppercase text-navy-deep text-3xl md:text-4xl tracking-tightest leading-tight">
+        Galeria realizacji
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 lg:auto-rows-[240px] gap-4">
+      <button type="button" class="gallery-item group relative overflow-hidden rounded-sm aspect-[4/3] lg:aspect-auto lg:col-span-3 lg:row-span-2 text-left" data-full="brand_assets/1.webp" data-caption="Dom jednorodzinny — Koszalin" data-category="Domy pod klucz">
+        <img src="brand_assets/1.webp" alt="Wykończony dom jednorodzinny z dachówką ceramiczną, Koszalin" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-navy-deep/0 to-transparent mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/70 via-transparent to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-5">
+          <div class="font-mono text-[11px] uppercase tracking-widest text-red-signal mb-1">Domy pod klucz</div>
+          <div class="font-display uppercase text-white text-lg tracking-tight">Dom jednorodzinny — Koszalin</div>
+        </div>
+      </button>
+
+      <button type="button" class="gallery-item group relative overflow-hidden rounded-sm aspect-[4/3] lg:aspect-auto lg:col-span-3 lg:row-span-1 text-left" data-full="brand_assets/2.webp" data-caption="Budynek w konstrukcji szkieletowej — stan surowy" data-category="Budynki szkieletowe">
+        <img src="brand_assets/2.webp" alt="Budynek w trakcie budowy w konstrukcji szkieletowej z widoczną więźbą dachową" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-navy-deep/0 to-transparent mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/70 via-transparent to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-5">
+          <div class="font-mono text-[11px] uppercase tracking-widest text-red-signal mb-1">Budynki szkieletowe</div>
+          <div class="font-display uppercase text-white text-lg tracking-tight">Stan surowy w budowie</div>
+        </div>
+      </button>
+
+      <button type="button" class="gallery-item group relative overflow-hidden rounded-sm aspect-[4/3] lg:aspect-auto lg:col-span-3 lg:row-span-1 text-left" data-full="brand_assets/4.webp" data-caption="Detal pokrycia dachowego" data-category="Rzemiosło dekarskie">
+        <img src="brand_assets/4.webp" alt="Detal pokrycia dachowego z łupkiem w kształcie rybiej łuski" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-navy-deep/0 to-transparent mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/70 via-transparent to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-5">
+          <div class="font-mono text-[11px] uppercase tracking-widest text-red-signal mb-1">Rzemiosło dekarskie</div>
+          <div class="font-display uppercase text-white text-lg tracking-tight">Detal pokrycia dachowego</div>
+        </div>
+      </button>
+
+      <button type="button" class="gallery-item group relative overflow-hidden rounded-sm aspect-[4/3] lg:aspect-auto lg:col-span-3 lg:row-span-1 text-left" data-full="brand_assets/3.webp" data-caption="Renowacja zabytkowego dworku" data-category="Obiekty zabytkowe">
+        <img src="brand_assets/3.webp" alt="Zabytkowy dworek z dachówką ceramiczną w trakcie renowacji" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-navy-deep/0 to-transparent mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/70 via-transparent to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-5">
+          <div class="font-mono text-[11px] uppercase tracking-widest text-red-signal mb-1">Obiekty zabytkowe</div>
+          <div class="font-display uppercase text-white text-lg tracking-tight">Renowacja zabytkowego dworku</div>
+        </div>
+      </button>
+
+      <button type="button" class="gallery-item group relative overflow-hidden rounded-sm aspect-[4/3] lg:aspect-auto lg:col-span-3 lg:row-span-1 text-left" data-full="brand_assets/5.webp" data-caption="Renowacja dachu zabytkowego kościoła" data-category="Obiekty zabytkowe">
+        <img src="brand_assets/5.webp" alt="Zabytkowy ceglany kościół z dachem pokrytym dachówką ceramiczną" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-navy-deep/0 to-transparent mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/70 via-transparent to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-5">
+          <div class="font-mono text-[11px] uppercase tracking-widest text-red-signal mb-1">Obiekty zabytkowe</div>
+          <div class="font-display uppercase text-white text-lg tracking-tight">Renowacja dachu kościoła</div>
+        </div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 z-[60] bg-navy-deep/95 backdrop-blur items-center justify-center p-6 hidden">
+  <button type="button" id="lightbox-close" aria-label="Zamknij podgląd" class="absolute top-6 right-6 text-white/70 hover:text-white p-2">
+    <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+  </button>
+  <figure class="max-w-4xl w-full">
+    <img id="lightbox-img" src="" alt="" class="w-full max-h-[75vh] object-contain rounded-sm" />
+    <figcaption class="mt-4 text-center">
+      <span id="lightbox-category" class="font-mono text-[11px] uppercase tracking-widest text-red-signal"></span>
+      <div id="lightbox-caption" class="font-display uppercase text-white text-lg tracking-tight mt-1"></div>
+    </figcaption>
+  </figure>
+</div>
+
+<!-- ============ OPINIE + KONTAKT ============ -->
+<section id="opinie" class="bg-navy-deep grain relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-24 grid lg:grid-cols-2 gap-16">
+
+    <div>
+      <div class="font-mono text-xs uppercase tracking-widest text-red-signal mb-3">Opinie klientów</div>
+      <h2 class="font-display font-bold uppercase text-white text-3xl md:text-4xl tracking-tightest leading-tight mb-10">
+        Zaufali nam mieszkańcy<br />Koszalina i okolic
+      </h2>
+
+      <div class="space-y-6">
+        <blockquote class="border-l-2 border-red-signal pl-6 py-1">
+          <p class="text-white/85 leading-[1.7] text-lg">„Dach po wymianie stoi już trzecią zimę bez żadnej usterki. Ekipa solidna, terminowa i posprzątała po sobie.”</p>
+          <footer class="mt-3 text-white/50 text-sm font-mono uppercase tracking-wide">— Klient, Koszalin</footer>
+        </blockquote>
+        <blockquote class="border-l-2 border-red-signal pl-6 py-1">
+          <p class="text-white/85 leading-[1.7] text-lg">„Wycena zgodna z tym, co zapłaciliśmy na koniec. Żadnych niespodzianek — polecamy dalej.”</p>
+          <footer class="mt-3 text-white/50 text-sm font-mono uppercase tracking-wide">— Klient, okolice Koszalina</footer>
+        </blockquote>
+      </div>
+
+      <div class="mt-12 flex items-center gap-5">
+        <div class="w-16 h-16 rounded-full bg-navy flex items-center justify-center border border-white/15 flex-shrink-0">
+          <span class="font-display font-bold text-red-signal text-xl">PF</span>
+        </div>
+        <div>
+          <div class="text-white font-display uppercase tracking-wide">Piotr Fira</div>
+          <div class="text-white/50 text-sm">Dekarze i Budowlańcy &middot; Koszalin, od 1996</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="kontakt" class="bg-white rounded-sm p-8 md:p-10 shadow-layered">
+      <h3 class="font-display font-bold uppercase text-navy-deep text-2xl tracking-tight mb-2">Poproś o wycenę</h3>
+      <p class="text-slate-body mb-7 leading-[1.7]">Zostaw numer, oddzwonimy w ciągu dnia roboczego. Możesz też zadzwonić od razu.</p>
+
+      <form class="space-y-5" onsubmit="event.preventDefault();">
+        <div>
+          <label for="name" class="block text-xs font-semibold uppercase tracking-wide text-navy-deep mb-2">Imię i nazwisko</label>
+          <input id="name" name="name" type="text" required placeholder="Jan Kowalski"
+            class="w-full border border-navy-deep/15 rounded-sm px-4 py-3 text-navy-deep placeholder:text-slate-body/50 focus:border-red-signal transition" />
+        </div>
+        <div>
+          <label for="phone" class="block text-xs font-semibold uppercase tracking-wide text-navy-deep mb-2">Telefon</label>
+          <input id="phone" name="phone" type="tel" required placeholder="600 000 000"
+            class="w-full border border-navy-deep/15 rounded-sm px-4 py-3 text-navy-deep placeholder:text-slate-body/50 focus:border-red-signal transition" />
+        </div>
+        <div>
+          <label for="message" class="block text-xs font-semibold uppercase tracking-wide text-navy-deep mb-2">Wiadomość</label>
+          <textarea id="message" name="message" rows="4" placeholder="Krótko opisz zakres prac..."
+            class="w-full border border-navy-deep/15 rounded-sm px-4 py-3 text-navy-deep placeholder:text-slate-body/50 focus:border-red-signal transition resize-none"></textarea>
+        </div>
+        <button type="submit" class="btn-primary w-full bg-red-signal hover:bg-red-dark text-white font-display uppercase font-semibold tracking-wide px-7 py-4 rounded-sm">
+          Wyślij zapytanie
+        </button>
+      </form>
+
+      <div class="mt-7 pt-7 border-t border-navy-deep/10 flex items-center gap-3">
+        <svg class="w-5 h-5 text-red-signal flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372a1.5 1.5 0 00-1.019-1.422l-3.55-1.183a1.5 1.5 0 00-1.628.408l-.483.483a.75.75 0 01-.918.13 12.06 12.06 0 01-5.19-5.19.75.75 0 01.13-.918l.483-.483a1.5 1.5 0 00.408-1.628L8.044 4.769A1.5 1.5 0 006.622 3.75H5.25A2.25 2.25 0 003 6v.75z" /></svg>
+        <a href="tel:607361251" class="text-navy-deep font-display font-semibold uppercase tracking-wide hover:text-red-signal transition">607 361 251</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-navy-deep border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-14 grid md:grid-cols-3 gap-10">
+    <div class="flex items-center gap-3">
+      <img src="brand_assets/logo-original.jpg" alt="Piotr Fira" class="h-14 w-14 rounded-full object-cover ring-2 ring-red-signal/50" />
+      <div>
+        <div class="font-display font-bold text-white uppercase tracking-wide">Piotr Fira</div>
+        <div class="text-white/50 text-xs uppercase tracking-widest font-mono">Dekarze i Budowlańcy</div>
+      </div>
+    </div>
+
+    <div class="text-white/70 text-sm leading-loose">
+      <div class="font-display uppercase text-white text-xs tracking-widest mb-3">Kontakt</div>
+      <p>Koszalin i okolice</p>
+      <a href="tel:607361251" class="block hover:text-red-signal transition">tel. 607 361 251</a>
+    </div>
+
+    <div class="text-white/70 text-sm leading-loose">
+      <div class="font-display uppercase text-white text-xs tracking-widest mb-3">Firma</div>
+      <p>Na rynku od 1996 roku</p>
+      <p>Dekarstwo &middot; Budowa domów &middot; Remonty</p>
+    </div>
+  </div>
+  <div class="border-t border-white/10 py-6">
+    <p class="text-center text-white/40 text-xs">&copy; 2026 Piotr Fira — Dekarze i Budowlańcy. Wszelkie prawa zastrzeżone.</p>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuBtn.addEventListener('click', () => {
+    const isOpen = mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== '0px';
+    if (isOpen) {
+      mobileMenu.style.maxHeight = '0px';
+      mobileMenu.style.opacity = '0';
+      menuBtn.setAttribute('aria-expanded', 'false');
+    } else {
+      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+      mobileMenu.style.opacity = '1';
+      menuBtn.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const lightboxCategory = document.getElementById('lightbox-category');
+  const lightboxClose = document.getElementById('lightbox-close');
+
+  function openLightbox(item) {
+    lightboxImg.src = item.dataset.full;
+    lightboxImg.alt = item.dataset.caption;
+    lightboxCaption.textContent = item.dataset.caption;
+    lightboxCategory.textContent = item.dataset.category;
+    lightbox.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.gallery-item').forEach((item) => {
+    item.addEventListener('click', () => openLightbox(item));
+  });
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+</body>
+</html>
