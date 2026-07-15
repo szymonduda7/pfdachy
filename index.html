@@ -59,15 +59,7 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
-  .stamp {
-    animation: stamp-spin 40s linear infinite;
-  }
-  @keyframes stamp-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
   @media (prefers-reduced-motion: reduce) {
-    .stamp { animation: none; }
     * { scroll-behavior: auto !important; }
   }
 
@@ -206,54 +198,50 @@
   <div class="absolute inset-0 opacity-[0.07]" style="background-image: repeating-linear-gradient(115deg, #fff 0 2px, transparent 2px 60px);"></div>
 
   <div class="relative max-w-7xl mx-auto px-5 md:px-8 pt-16 pb-24 md:pt-24 md:pb-32">
-    <div class="max-w-2xl">
-      <h1 class="font-display font-bold uppercase text-white text-4xl sm:text-5xl md:text-6xl leading-[1.05] tracking-tightest mt-2">
-        Dachy i domy<br />budowane <span class="text-red-signal">solidnie</span>
-      </h1>
+    <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-16 items-center">
+      <div class="order-2 lg:order-1 max-w-2xl">
+        <h1 class="font-display font-bold uppercase text-white text-4xl sm:text-5xl md:text-6xl leading-[1.05] tracking-tightest mt-2">
+          Dachy i domy<br />budowane <span class="text-red-signal">solidnie</span>
+        </h1>
 
-      <p class="mt-6 text-white/75 text-lg leading-[1.7] max-w-xl">
-        Krycie dachów, budowa domów jednorodzinnych i remonty. Jedna ekipa, trzy dekady doświadczenia
-        i rzetelna robota na terenie Koszalina i okolic.
-      </p>
+        <p class="mt-6 text-white/75 text-lg leading-[1.7] max-w-xl">
+          Krycie dachów, budowa domów jednorodzinnych i remonty. Jedna ekipa, trzy dekady doświadczenia
+          i rzetelna robota na terenie Koszalina i okolic.
+        </p>
 
-      <div class="mt-9 flex flex-col sm:flex-row gap-4">
-        <a href="tel:607361251" class="btn-primary inline-flex items-center justify-center gap-2 bg-red-signal hover:bg-red-dark text-white font-display uppercase font-semibold tracking-wide px-7 py-4 rounded-sm">
-          Zadzwoń: 607 361 251
-        </a>
-        <a href="#kontakt" class="btn-outline inline-flex items-center justify-center gap-2 border border-white/30 hover:bg-white hover:text-navy-deep text-white font-display uppercase font-semibold tracking-wide px-7 py-4 rounded-sm">
-          Bezpłatna wycena
-        </a>
+        <div class="mt-9 flex flex-col sm:flex-row gap-4">
+          <a href="tel:607361251" class="btn-primary inline-flex items-center justify-center gap-2 bg-red-signal hover:bg-red-dark text-white font-display uppercase font-semibold tracking-wide px-7 py-4 rounded-sm">
+            Zadzwoń: 607 361 251
+          </a>
+          <a href="#kontakt" class="btn-outline inline-flex items-center justify-center gap-2 border border-white/30 hover:bg-white hover:text-navy-deep text-white font-display uppercase font-semibold tracking-wide px-7 py-4 rounded-sm">
+            Bezpłatna wycena
+          </a>
+        </div>
+
+        <div class="mt-14 grid grid-cols-3 gap-6 max-w-lg border-t border-white/15 pt-8">
+          <div>
+            <div class="font-display font-bold text-3xl text-white">29<span class="text-red-signal">+</span></div>
+            <div class="text-white/55 text-xs uppercase tracking-wide mt-1">lat na rynku</div>
+          </div>
+          <div>
+            <div class="font-display font-bold text-3xl text-white">1996</div>
+            <div class="text-white/55 text-xs uppercase tracking-wide mt-1">rok założenia</div>
+          </div>
+          <div>
+            <div class="font-display font-bold text-3xl text-white">100<span class="text-red-signal">%</span></div>
+            <div class="text-white/55 text-xs uppercase tracking-wide mt-1">własna ekipa</div>
+          </div>
+        </div>
       </div>
 
-      <div class="mt-14 grid grid-cols-3 gap-6 max-w-lg border-t border-white/15 pt-8">
-        <div>
-          <div class="font-display font-bold text-3xl text-white">29<span class="text-red-signal">+</span></div>
-          <div class="text-white/55 text-xs uppercase tracking-wide mt-1">lat na rynku</div>
-        </div>
-        <div>
-          <div class="font-display font-bold text-3xl text-white">1996</div>
-          <div class="text-white/55 text-xs uppercase tracking-wide mt-1">rok założenia</div>
-        </div>
-        <div>
-          <div class="font-display font-bold text-3xl text-white">100<span class="text-red-signal">%</span></div>
-          <div class="text-white/55 text-xs uppercase tracking-wide mt-1">własna ekipa</div>
+      <!-- logo showcase -->
+      <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
+        <div class="relative">
+          <div class="absolute inset-0 rounded-full bg-red-signal/25 blur-3xl scale-110"></div>
+          <div class="absolute -inset-3 rounded-full border border-white/10"></div>
+          <img src="brand_assets/logo-original.jpg" alt="Piotr Fira - Dekarze i Budowlańcy, logo firmy od 1996 roku" class="relative w-40 h-40 sm:w-52 sm:h-52 lg:w-72 lg:h-72 xl:w-80 xl:h-80 rounded-full object-cover ring-4 ring-white/15 shadow-layered" />
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- signature stamp badge -->
-  <div class="hidden md:flex absolute right-10 bottom-10 items-center justify-center w-32 h-32 lg:w-36 lg:h-36">
-    <svg viewBox="0 0 200 200" class="stamp absolute inset-0 w-full h-full text-white/25">
-      <defs>
-        <path id="stampCircle" d="M 100,100 m -80,0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" />
-      </defs>
-      <text font-family="Space Mono, monospace" font-size="13" letter-spacing="3" fill="currentColor">
-        <textPath href="#stampCircle" startOffset="0%">GWARANCJA JAKOŚCI &middot; RZETELNA ROBOTA &middot; </textPath>
-      </text>
-    </svg>
-    <div class="w-20 h-20 lg:w-24 lg:h-24 rounded-full border-2 border-red-signal/80 flex items-center justify-center text-center">
-      <span class="font-display font-bold text-white text-sm leading-tight">OD<br />1996</span>
     </div>
   </div>
 </section>
@@ -341,6 +329,7 @@
         <img src="brand_assets/2.webp" alt="Budowa realizowana przez ekipę Piotra Firy — konstrukcja dachu w trakcie budowy" class="w-full h-full object-cover" />
         <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/60 mix-blend-multiply"></div>
       </div>
+      <img src="brand_assets/logo-original.jpg" alt="Piotr Fira - Dekarze i Budowlańcy" class="hidden sm:block absolute -top-6 -left-6 w-20 h-20 lg:w-24 lg:h-24 rounded-full object-cover ring-4 ring-cream shadow-layered" />
       <div class="hidden sm:flex absolute -bottom-6 -right-6 bg-navy-deep text-white rounded-sm px-6 py-5 shadow-layered items-center gap-4">
         <span class="font-display font-bold text-3xl text-red-signal">29+</span>
         <span class="text-xs uppercase tracking-wide text-white/70 leading-tight max-w-[6.5rem]">lat rzetelnej roboty w Koszalinie</span>
@@ -491,9 +480,7 @@
       </div>
 
       <div class="mt-12 flex items-center gap-5">
-        <div class="w-16 h-16 rounded-full bg-navy flex items-center justify-center border border-white/15 flex-shrink-0">
-          <span class="font-display font-bold text-red-signal text-xl">PF</span>
-        </div>
+        <img src="brand_assets/logo-original.jpg" alt="Piotr Fira - Dekarze i Budowlańcy" class="w-16 h-16 rounded-full object-cover ring-2 ring-red-signal/50 flex-shrink-0" />
         <div>
           <div class="text-white font-display uppercase tracking-wide">Piotr Fira</div>
           <div class="text-white/50 text-sm">Dekarze i Budowlańcy &middot; Koszalin, od 1996</div>
